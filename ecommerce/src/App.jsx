@@ -9,6 +9,7 @@ import Login from './Pages/Login'
 import PlaceOrder from './Pages/PlaceOrder'
 import Orders from './Pages/Orders'
 import Navbar from './Components/Navbar';
+import Footer from './Components/Footer';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
 
 
 </Routes>
+<Footer/>
     </div>
   );
 }
