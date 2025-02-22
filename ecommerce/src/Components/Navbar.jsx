@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { assets } from "../assets/assets";
 import { NavLink, Link } from "react-router-dom";
+import { ShopContext } from "../Context/ShopContext";
+
 
 const Navbar = () => {
   const [isVisible, setIsVisible] = useState(false);
-
+  const {setShowSearch}=useContext(ShopContext)
   return (
     <div className="flex items-center justify-between py-5 px-4 sm:px-8 font-medium bg-white  rounded-b-xl shadow-lg transition-all duration-300">
       {/* Logo */}
@@ -37,8 +39,8 @@ const Navbar = () => {
 
       {/* Icons */}
       <div className="flex items-center gap-6">
-        <img
-          src={assets.search_icon}
+        <img onClick={()=> setShowSearch(true)} src={assets.search_icon}
+          
           className="w-5 cursor-pointer hover:scale-110 transition-transform duration-200"
           alt="Search"
         />
